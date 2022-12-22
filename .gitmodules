@@ -1,0 +1,6 @@
+[submodule "packages/base-nextjs"]
+	path = packages/base-nextjs
+	url = https://github.com/Tetcha/base-nextjs.git
+[submodule "packages/base-nestjs"]
+	path = packages/base-nestjs
+	url = https://github.com/Tetcha/base-nestjs.git
