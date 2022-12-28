@@ -1,17 +1,31 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/base-utils"
+    ]
+  },
   "devDependencies": {
     "lerna": "^6.1.0"
   },
   "scripts": {
+    "client:dev": "yarn workspace @base/base-nextjs dev",
+    "client:build": "yarn workspace @base/base-nextjs build",
+    "server:dev": "yarn workspace @base/base-nestjs start:dev",
+    "server:build": "yarn workspace @base/base-nestjs build:prod",
+    "app:start": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
+    "app:build": "concurrently --kill-others-on-fail \"yarn server:build\" \"yarn client:build\"",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
     "setup": "git submodule update --init --recursive",
     "pull": "git submodule update --recursive --remote"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
   }
 }
