@@ -13,12 +13,7 @@
     "lerna": "^6.1.0"
   },
   "scripts": {
-    "client:dev": "yarn workspace @base/base-nextjs dev",
-    "client:build": "yarn workspace @base/base-nextjs build",
-    "server:dev": "yarn workspace @base/base-nestjs start:dev",
-    "server:build": "yarn workspace @base/base-nestjs build:prod",
-    "app:start": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
-    "app:build": "concurrently --kill-others-on-fail \"yarn server:build\" \"yarn client:build\"",
+    "start": "lerna run start:dev --parallel",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
