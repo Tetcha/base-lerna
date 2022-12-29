@@ -4,4 +4,7 @@
 [submodule "packages/base-nestjs"]
 	path = packages/base-nestjs
 	url = https://github.com/Tetcha/base-nestjs.git
+[submodule "packages/base-utils"]
+	path = packages/base-utils
+	url = https://github.com/Tetcha/base-utils.git
 
